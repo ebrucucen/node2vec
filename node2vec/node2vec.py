@@ -177,8 +177,9 @@ class Node2Vec:
             skip_gram_params['workers'] = self.workers
 
         # Figure out gensim version, naming of output dimensions changed from size to vector_size in v4.0.0
-        gensim_version = pkg_resources.get_distribution("gensim").version
-        size = 'size' if gensim_version < '4.0.0' else 'vector_size'
+        # gensim_version = pkg_resources.get_distribution("gensim").version
+        # size = 'size' if gensim_version < '4.0.0' else 'vector_size'
+        size='vector_size'
         if size not in skip_gram_params:
             skip_gram_params[size] = self.dimensions
 
